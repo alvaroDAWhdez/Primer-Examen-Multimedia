@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Examen</string>
+
+    <!--Array para mostrar los valores en el spinner-->
+    <string-array name="unidad_sauron">
+        <item>Guerrero</item>
+        <item>Arquero</item>
+        <item>Explorador</item>
+        <item>Berserker</item>
+    </string-array>
+</resources>

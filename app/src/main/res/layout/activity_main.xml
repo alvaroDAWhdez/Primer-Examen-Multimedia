@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--Textview de saludo-->
+    <TextView
+        android:id="@+id/txtSaludo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejército de Uruk-hai"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <!--EditText para escribir el identificador de Uruk-hai-->
+    <EditText
+        android:id="@+id/idUruk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSaludo"
+        android:hint="Identificador de Uruk-hai..." />
+
+    <!--Textview de tipo de unidad-->
+    <TextView
+        android:id="@+id/txtUnidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de unidad:"
+        app:layout_constraintTop_toBottomOf="@+id/idUruk"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <!--Spinner de tipo de unidad-->
+    <Spinner
+        android:id="@+id/spinnerUnidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtUnidad"
+        app:layout_constraintStart_toStartOf="parent"
+        android:entries="@array/unidad_sauron"
+        />
+
+    <!--Texto del radiogroup-->
+    <TextView
+        android:id="@+id/txtArmamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Armamento:"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerUnidad"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <!--RadioGroup de armamento -->
+    <RadioGroup
+        android:id="@+id/rgArmamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtArmamento"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <!--Radiobuttons pertenecientes-->
+        <RadioButton
+            android:id="@+id/rbArmadura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Armadura de Hierro"/>
+
+        <RadioButton
+            android:id="@+id/rbEscudo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escudo de Isengard "/>
+    </RadioGroup>
+
+    <!--Checkbox para indicar si el usuario quiere llevar la antorcha -->
+    <CheckBox
+        android:id="@+id/chkAntorcha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rgArmamento"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Llevar antorcha de polvorin"
+
+        />
+
+    <!--ImageButton que se utiliza para enviar la informacion sobre el nuevo soldado -->
+    <ImageButton
+        android:id="@+id/btnRegister"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/imagen2"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toBottomOf="@+id/chkAntorcha"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
