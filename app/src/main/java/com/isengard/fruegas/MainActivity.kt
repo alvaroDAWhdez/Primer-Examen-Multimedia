@@ -90,6 +90,21 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        // Buscamos el valor de los elementos para leer su estado actual
+        val textId = findViewById<EditText>(R.id.idUruk)
+        val spinnerUnidad = findViewById<Spinner>(R.id.spinnerUnidad)
+        val rgArmamento = findViewById<RadioGroup>(R.id.rgArmamento)
+        val chkAntorcha = findViewById<CheckBox>(R.id.chkAntorcha)
+
+        outState.putString("KEY_ID", textId.text.toString())
+        outState.putInt("KEY_SPINNER", spinnerUnidad.selectedItemPosition)
+        outState.putInt("KEY_ARMAMENTO", rgArmamento.checkedRadioButtonId)
+        outState.putBoolean("KEY_ANTORCHA", chkAntorcha.isChecked)
+    }
+
     //Metodos de ciclo de vida
     override fun onStart() {
         super.onStart()
